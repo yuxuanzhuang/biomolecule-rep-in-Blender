@@ -1,5 +1,5 @@
-file_top = 'blender_test/test.pdb'
-file_traj ='blender_test/test.xtc'
+file_top = '/home/scottzhuang/blender_test/test.pdb'
+file_traj ='/home/scottzhuang/blender_test/test.xtc'
 
 
 # visualize protein as tube
@@ -12,6 +12,7 @@ rep = 'tube'
 # molecule_name = 'lipid'
 # rep = 'vdw'
 
+nm_scale = 0.1
 md_frame_start = 0
 md_frame_interval = 5
 md_frame_end = 100
@@ -513,7 +514,7 @@ if rep == 'tube':
         time_step=md_frame_interval,
         end=md_frame_end,
         name=output_name,
-        nm_scale=0.1
+        nm_scale=nm_scale
     )
 elif rep == 'vdw':
     create_frames(
@@ -523,7 +524,7 @@ elif rep == 'vdw':
         time_step=md_frame_interval,
         end=md_frame_end,
         name=output_name,
-        nm_scale=0.1
+        nm_scale=nm_scale
     )
 
 # hide the created frames collection and the properties collection
