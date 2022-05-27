@@ -1,5 +1,5 @@
-file_top = '/home/scottzhuang/blender_test/test.pdb'
-file_traj ='/home/scottzhuang/blender_test/test.xtc'
+file_top = 'blender_test/test.pdb'
+file_traj ='blender_test/test.xtc'
 
 
 # visualize protein as tube
@@ -407,7 +407,7 @@ def create_tube_model(name, collection, coordinates):
 
     # map coords to spline
     polyline = curveData.splines.new('NURBS')
-    polyline.points.add(len(coordinates))
+    polyline.points.add(len(coordinates) - 1)
     for i, coord in enumerate(coordinates):
         x,y,z = coord
         polyline.points[i].co = (x, y, z, 1)
@@ -428,6 +428,7 @@ def create_joined_tube_object(ag, name, collection, nm_scale):
             collection=collection,
             coordinates=ca_coords,
         ))
+
     model_c = {}
     model_c["object"] = model_c["active_object"] = base_models[0]
     model_c["selected_objects"] = model_c["selected_editable_objects"] = base_models
