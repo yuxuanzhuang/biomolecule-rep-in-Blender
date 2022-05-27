@@ -163,8 +163,8 @@ u = mda.Universe(file_top, file_traj)
 if rep == 'vdw':
     ag = u.select_atoms(selection)
 elif rep == 'tube':
-    # restrain the selection to name CA for tube rep
-    ag = u.select_atoms(selection).select_atoms('name CA') 
+    # restrain the selection to name CA or nucleic backbone for tube rep
+    ag = u.select_atoms(selection).select_atoms('name CA or nucleicbackbone') 
 
 output_name = molecule_name
 
@@ -490,7 +490,7 @@ def create_frames(universe, collection, start=1, end=50000, time_step=100, name=
             create_model(
                 name=output_name + "_frame_" + str(counter),
                 collection=collection,
-                locations=universe.atoms.positions * nm_scale
+                locations=ag.positions * nm_scale
             )
         counter += 1
 
