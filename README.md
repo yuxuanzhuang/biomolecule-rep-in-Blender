@@ -4,4 +4,4 @@ Represent biomolecules in different representation tahnks to Molecular node plug
 
 ## Current Implementation
 - Tube (of C-alpha trace)
-- Solvent Excluded Surface calculated by MSMS (https://ccsb.scripps.edu/msms/documentation/) 
+- Solvent Excluded Surface calculated by MSMS (https://ccsb.scripps.edu/msms/documentation/) (currently not possible to draw for trajectories)
